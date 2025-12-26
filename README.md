@@ -7,7 +7,7 @@ Flask App hosted on AWS.
 
 Kubernetes cluster deployed on AWS EC2 using kubeadm.
 
-Calico/Flannel for pod networking.
+Flannel for pod networking.
 
 Jenkins CI/CD pipeline automates build → test → deploy.
 
@@ -23,7 +23,7 @@ Containers: Docker
 
 Orchestration: Kubernetes (kubeadm)
 
-Networking: Calico / Flannel
+Networking: Flannel
 
 Cloud: AWS EC2
 
