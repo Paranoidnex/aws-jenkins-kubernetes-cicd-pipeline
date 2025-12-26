@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-app-deploy
+  labels:
+    app: python-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-app
+  template:
+    metadata:
+      labels:
+        app: python-app
+    spec:
+      containers:
+      - name: python-app
+        image: ${docker_image}:${tag}
+        ports:
+        - containerPort: 80
+ ---1
+ apiVersion: v1
+ kind: Service
+ metadata:
+  name: python-app-service
+ spec:
+  selector:
+    app: python-app
+  ports:
+    - protocol: TCP
+      port: 80
+  type: NodePort
